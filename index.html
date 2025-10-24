@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadyar Hassan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+</head>
+<style>
+@font-face {
+  font-family: 'NRT-Reg';
+  src: url('NRT-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+</style>
+<body>
+
+    <div id="splash-screen">
+        <div class="spinner"></div>
+        <p id="splash-text" data-lang-key="splashWait">Loading...</p>
+    </div>
+
+    <div id="app-container">
+        <main>
+            <section id="home-page" class="page active">
+                <div class="hero">
+                    <img src="assets/icon/shadyar.jpeg" alt="ShadyarHassan" class="profile-pic">
+                    <h1 data-lang-key="name">Shadyar Hassan</h1>
+                    <p class="subtitle" data-lang-key="bio">A creative developer and writer passionate about building beautiful things.</p>
+                </div>
+            </section>
+
+            <section id="projects-page" class="page">
+                <h2 data-lang-key="projectsTitle">My Work & Projects</h2>
+                
+                <div class="timeline">
+                    <h3 class="year">2025</h3>
+                    <div class="project-card">
+                        <img src="assets/img/my-kurdapp.png" alt="Mykurdapp">
+                        <div class="card-content">
+                            <h4 data-lang-key="proj1Title">مای کورد ئەپ</h4>
+                            <p data-lang-key="proj1Desc">ستۆرێک بۆ  دابەزاندنی یاری و بەرنامەی هاککراو .</p>
+                            <div class="project-details">
+                                <p data-lang-key="proj1Details">مای کورد ئەپ ، ستۆرێک بۆ دابەزاندنی یاری و بەرنامەی هاککراو و تایبەتمەندی زیاد کراو بە خۆڕایی بۆ ئەندرۆید - ئایفۆن کە بەمزووانە بەردەست دەبێت .</p>
+                            </div>
+                            <button class="details-btn ripple" data-lang-key="readMore">زیاتر بخوێنەرەوە</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="timeline">
+                    <h3 class="year">2024</h3>
+                    <div class="project-card">
+                        <img src="assets/img/avadramafan.jpeg" alt="avadramafan">
+                        <div class="card-content">
+                            <h4 data-lang-key="proj2Title">  ئاڤادراما فان</h4>
+                            <p data-lang-key="proj2Desc">وێبسایتێک بۆ بینەربونوی فیلم و دراماکانی کەناڵی ئاڤا میدیا .</p>
+                            <div class="project-details">
+                                <p data-lang-key="proj2Details"> وێبسایتی ئاڤا دراما فان بۆ بینەربوونی فیلم و دراماکانی کەناڵی ئاڤا میدیا ، کە بەمزوانە بە شێوازی ئەپڵکەیشن یش بەردەست دەبێت بۆ هەردوو سیستەمی ئەندرۆید - ئایفۆن .</p>
+                            </div>
+                            <button class="details-btn ripple" data-lang-key="readMore">زیاتر بخوێنەرەوە</button>
+                        </div>
+                    </div>
+                     <div class="project-card">
+                        <img src="assets/img/kurdhome-tv.jpeg" alt="kurdhometv">
+                        <div class="card-content">
+                            <h4 data-lang-key="proj3Title">کورد هۆم تیڤی</h4>
+                            <p data-lang-key="proj3Desc">بۆ بینەربوونی پەخشی ڕاستەوخۆی کەناڵە کوردییەکان </p>
+                            <div class="project-details">
+                                <p data-lang-key="proj3Details">کورد هۆم تیڤی ، وێبسایتێکی کوردییە بۆ بینەربوونی پەخشی ڕاستەوخۆی کەناڵە کوردییەکان ( هەواڵ ، ئاینی ، منداڵان ، وەرزشی ، دراما ، ...) بەبێ بوونی هیچ کێشەیەک .</p>
+                            </div>
+                            <button class="details-btn ripple" data-lang-key="readMore">زیاتر بخوێنەرەوە</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings-page" class="page">
+                <h2 data-lang-key="settingsTitle">Settings</h2>
+                <div class="setting-item">
+                    <label data-lang-key="languageLabel">Language</label>
+                    <select id="language-switcher">
+                        <option value="en">English</option>
+                        <option value="ku">کوردی (Kurdish)</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label data-lang-key="themeLabel">Dark Mode</label>
+                    <div class="theme-switch-wrapper">
+                        <input type="checkbox" id="theme-switcher">
+                        <label for="theme-switcher" class="toggle-label"></label>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+<nav class="bottom-nav">
+  <button class="nav-button ripple active" data-page="home-page" data-lang-key="navHome">
+    <i class="fa-solid fa-house"></i><br>Home
+  </button>
+
+  <button class="nav-button ripple" data-page="projects-page" data-lang-key="navProjects">
+    <i class="fa-solid fa-briefcase"></i><br>Projects
+  </button>
+
+  <button class="nav-button ripple" data-page="settings-page" data-lang-key="navSettings">
+    <i class="fa-solid fa-gear"></i><br>Settings
+  </button>
+</nav>
+
+
+
+
+    <script src="assets/js/script.js">
+    </script>
+</body>
+</html>
