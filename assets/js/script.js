@@ -7,7 +7,7 @@
                 en: {
                     splashWait: "Loading...",
                     name: "Shadyar Hassan",
-                    bio: "Hello ! My name is Shadyar Hassan, I am 15 years old and I am from one of the Kurdistan cities. I have many projects and I like new things and I have done many things. And my works are commendable so far I have created the most beautiful way and I am always trying and many people who have helped me to reach this day I thank them thanks to those people I have reached one of my dreams to own my website and many other projects.",
+                    bio: "Hello ! My name is Shadyar Hassan, I am 19 years old and I am from one of the Kurdistan cities. I have many projects and I like new things and I have done many things. And my works are commendable so far I have created the most beautiful way and I am always trying and many people who have helped me to reach this day I thank them thanks to those people I have reached one of my dreams to own my website and many other projects.",
                     projectsTitle: "My Work & Projects",
                     proj1Title: "My KurdApp",
                     proj1Desc: "A store for downloading hacked games and applications.",
