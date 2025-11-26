@@ -7,7 +7,7 @@
                 en: {
                     splashWait: "Loading...",
                     name: "Shadyar Hassan",
-                    bio: "Hello ! My name is Shadyar Hassan, I am 19 years old and I am from one of the Kurdistan cities. I have many projects and I like new things and I have done many things. And my works are commendable so far I have created the most beautiful way and I am always trying and many people who have helped me to reach this day I thank them thanks to those people I have reached one of my dreams to own my website and many other projects.",
+                    bio: "Hello ! My name is Shadyar Hassan, I am 1* years old and I am from one of the Kurdistan cities. I have many projects and I like new things and I have done many things. And my works are commendable so far I have created the most beautiful way and I am always trying and many people who have helped me to reach this day I thank them thanks to those people I have reached one of my dreams to own my website and many other projects.",
                     projectsTitle: "My Work & Projects",
                     proj1Title: "My KurdApp",
                     proj1Desc: "A store for downloading hacked games and applications.",
@@ -30,7 +30,7 @@
                 ku: {
                     splashWait: "کەمێک چاوەڕوان بە...",
                     name: "شادیار حەسەن",
-                    bio: "سڵاو ! ، من ناوم شادیار حەسەن ـە تەمەنم ١٥ ساڵە و خەڵکی یەکێک لە شارەکانی کوردستانم ، خاوەنی چەندین پرۆژەم و حەزم لە شتی نوێیە و چەندین کارم کردوە ،لە تەمەنی ١٢ ساڵیەوە حەزم لە بواری پرۆگرامینگ و کۆد نوسین هەیە و شارەزام لە چەندین زمانی کۆد نوسین حەزم لە بواری کۆد و دروستکردنی وێبسایت هەیە و حەزدەکەم هەموو کات فێری شتی نوێ ببم و زیاتر شت بزانم ، و کارەکانم جێگای دەست خۆشین تاوەکوو ئێستا بە جوانترین شێوە دروستم کردونە و هەمیشە لە هەوڵداندام وە چەندین کەس کە هاوکارم بوونە گەیشتم بە ئەم رۆژە سوپاسیان دەکەم لەسایەی ئەو کەسانە گەیشتومە بە یەکێک لە خەونەکانم ئەمیش ببمە خاوەن وێبسایتی خۆم و چەندین پرۆژەی دیکە .",
+                    bio: "سڵاو ! ، من ناوم شادیار حەسەن ـە تەمەنم١* ساڵە و خەڵکی یەکێک لە شارەکانی کوردستانم ، خاوەنی چەندین پرۆژەم و حەزم لە شتی نوێیە و چەندین کارم کردوە ،لە تەمەنی ١٢ ساڵیەوە حەزم لە بواری پرۆگرامینگ و کۆد نوسین هەیە و شارەزام لە چەندین زمانی کۆد نوسین حەزم لە بواری کۆد و دروستکردنی وێبسایت هەیە و حەزدەکەم هەموو کات فێری شتی نوێ ببم و زیاتر شت بزانم ، و کارەکانم جێگای دەست خۆشین تاوەکوو ئێستا بە جوانترین شێوە دروستم کردونە و هەمیشە لە هەوڵداندام وە چەندین کەس کە هاوکارم بوونە گەیشتم بە ئەم رۆژە سوپاسیان دەکەم لەسایەی ئەو کەسانە گەیشتومە بە یەکێک لە خەونەکانم ئەمیش ببمە خاوەن وێبسایتی خۆم و چەندین پرۆژەی دیکە .",
                     projectsTitle: "کار و پڕۆژەکانم",
                     proj1Title: " مای کورد ئەپ ",
                     proj1Desc: "ستۆرێک بۆ دابەزاندنی یاری و بەرنامەی هاککراو",
