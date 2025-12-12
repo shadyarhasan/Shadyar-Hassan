@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>سیستەمی پەیام — دیزاینی نوێ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  font-family:"IBM Plex Sans Arabic",sans-serif;
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  background:linear-gradient(135deg,#2d49ff,#00c6ff);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* main card */
+.card{
+  width:100%;
+  max-width:460px;
+  background:#ffffffee;
+  backdrop-filter:blur(10px);
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 45px rgba(0,0,0,0.15);
+  animation:fadeIn .6s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(15px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* section image */
+.header-img{
+  width:100%;
+  height:160px;
+  border-radius:12px;
+  object-fit:cover;
+  margin-bottom:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.2);
+}
+
+/* inputs */
+input,textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #dcdffe;
+  background:#f7f9ff;
+  border-radius:10px;
+  font-size:15px;
+  margin-top:6px;
+}
+textarea{min-height:130px}
+
+/* button */
+button{
+  width:100%;
+  background:#2d49ff;
+  color:white;
+  padding:12px;
+  border:0;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.25s;
+}
+button:hover{
+  background:#2338d6;
+  transform:translateY(-2px);
+}
+
+/* text styles */
+h2{margin:0 0 15px 0;color:#222;font-size:20px;text-align:center}
+.label{font-size:14px;color:#555;margin-top:10px}
+.small{font-size:13px;color:#777}
+.msg-box{
+  padding:15px;
+  background:#f2f6ff;
+  border:1px dashed #aac1ff;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+.hidden{display:none}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- login -->
+  <div id="login">
+    <img class="header-img" src="https://images.unsplash.com/photo-1557683304-673a23048d34?q=80&w=1200" />
+    <h2>چوونە ژوورەوە</h2>
+
+    <div class="label">ناوی بەکارهێنەر</div>
+    <input id="u">
+
+    <div class="label">پاسوورد</div>
+    <input id="p" type="password">
+
+    <button onclick="login()">چوونە ژوورەوە</button>
+    <p class="small">ئەندام: zanyar / zanyar2009 — ئۆنەر: shadyar / shadyar2010</p>
+  </div>
+
+  <!-- member -->
+  <div id="member" class="hidden">
+    <img class="header-img" src="https://images.unsplash.com/photo-1535016120720-40c646be5580?q=80&w=1200" />
+    <h2>بەخێربێیت زانیار</h2>
+
+    <div class="label">پەیام بنوسە</div>
+    <textarea id="memberMsg"></textarea>
+
+    <button onclick="send()">ناردنی پەیام</button>
+    <p id="feedback" class="small"></p>
+  </div>
+
+  <!-- owner -->
+  <div id="owner" class="hidden">
+    <img class="header-img" src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200" />
+    <h2>پەیامی نێردراو</h2>
+
+    <div id="noMsg" class="small">هیچ پەیام نییە</div>
+
+    <div id="msgCard" class="msg-box hidden">
+      <div id="msgText"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const USERS = {
+  "zanyar":"zanyar2009",
+  "shadyar":"shadyar2010"
+};
+
+const KEY = "PM_APP_MSG_V2";
+
+function login(){
+  let u = document.getElementById("u").value.trim();
+  let p = document.getElementById("p").value.trim();
+
+  if(USERS[u] && USERS[u] === p){
+    document.getElementById("login").classList.add("hidden");
+
+    if(u==="zanyar"){
+      document.getElementById("member").classList.remove("hidden");
+    } else {
+      document.getElementById("owner").classList.remove("hidden");
+      loadMsg();
+    }
+  } else {
+    alert("ناوی بەکارهێنەر یان پاسوورد هەڵەیە");
+  }
+}
+
+function send(){
+  let txt = document.getElementById("memberMsg").value.trim();
+  if(!txt){ alert("پەیام بنوسە"); return; }
+
+  const obj = {
+    from:"zanyar",
+    text:txt,
+    time:new Date().toLocaleString()
+  };
+
+  localStorage.setItem(KEY, JSON.stringify(obj));
+
+  // feedback
+  document.getElementById("feedback").innerHTML =
+    "<span style='color:green'>✓ پەیام نێردرا</span>";
+
+  // download files
+  downloadTXT(obj);
+  downloadJSON(obj);
+}
+
+function loadMsg(){
+  let raw = localStorage.getItem(KEY);
+  if(!raw) return;
+
+  let obj = JSON.parse(raw);
+
+  document.getElementById("noMsg").classList.add("hidden");
+  document.getElementById("msgCard").classList.remove("hidden");
+
+  document.getElementById("msgText").innerHTML =
+    "<b>لەلایەن:</b> " + obj.from + "<br>" +
+    "<b>کات:</b> " + obj.time + "<br><br>" +
+    obj.text;
+}
+
+function downloadTXT(obj){
+  let content = 
+    "پەیام لەلایەن: "+obj.from+"\n"+
+    "کات: "+obj.time+"\n\n"+
+    obj.text;
+
+  let blob = new Blob([content],{type:"text/plain"});
+  let a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="message.txt";
+  a.click();
+}
+
+function downloadJSON(obj){
+  let blob=new Blob(
+    [JSON.stringify(obj,null,2)],
+    {type:"application/json"}
+  );
+  let a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="message.json";
+  a.click();
+}
+</script>
+
+</body>
+</html>
